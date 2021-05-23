@@ -6,7 +6,7 @@ def scheduler(interval, fnc, wait=True):
     base_time = time.time()
     next_time = 0
     while True:
-        t = threading.Thread(target = fnc)
+        t = threading.Thread(target = fnc) # set fnc as execute method
         t.start()
         if wait:
             t.join() # Block call next thread until current thread
